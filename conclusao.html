@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebCrew Cursos</title>
+	<link rel="stylesheet" type="text/css" href="megatrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+
+		function verificaRespostas(respostas, curso){
+			if(curso == "fundamentos"){
+				var respostasCerta = ["1","3","2","1","4","1","1","2","3","1"]
+				var contador = 0;
+				for(i=0; i < respostasCerta.length;i++){
+					if (respostasCerta[i] == respostas[i]){
+						contador++;
+					}
+				}
+				if (contador >= 6){
+					localStorage.setItem("percentual", contador/10*100)
+					return true
+				} else {
+					return false
+				}
+			} else if (curso == "logica") {
+				var respostasCerta = ["2","2","2","1","2","3","2","1","1","1"]
+				var contador = 0;
+				for(i=0; i < respostasCerta.length;i++){
+					if (respostasCerta[i] == respostas[i]){
+						contador++;
+					}
+				}
+				if (contador >= 6){
+					localStorage.setItem("percentual", contador/10*100)
+					return true
+				} else {
+					return false
+				}
+			} else if (curso == "ingles") {
+				var respostasCerta = ["2", "2", "2", "3", "3", "1", "2", "3", "2", "1"]
+				var contador = 0;
+				for(i=0; i < respostasCerta.length;i++){
+					if (respostasCerta[i] == respostas[i]){
+						contador++;
+					}
+				}
+				if (contador >= 6){
+					localStorage.setItem("percentual", contador/10*100)
+					return true
+				} else {
+					return false
+				}
+			} else if (curso == "arquitetura") {
+				var respostasCerta = ["4","2","1","1","3","3","4","4","4","3"]
+				var contador = 0;
+				for(i=0; i < respostasCerta.length;i++){
+					if (respostasCerta[i] == respostas[i]){
+						contador++;
+					}
+				}
+				if (contador >= 6){
+					localStorage.setItem("percentual", contador/10*100)
+					return true
+				} else {
+					return false
+				}
+			} else if (curso == "metodologia") {
+				var respostasCerta = ["1","1","4","2","4","3","1","2","4","4"]
+				var contador = 0;
+				for(i=0; i < respostasCerta.length;i++){
+					if (respostasCerta[i] == respostas[i]){
+						contador++;
+					}
+				}
+				if (contador >= 6){
+					localStorage.setItem("percentual", contador/10*100)
+					return true
+				} else {
+					return false
+				}
+			} else if (curso == "sistemas") {
+				var respostasCerta = ["3","4","2","3","3","3","3","2","4","1"]
+				var contador = 0;
+				for(i=0; i < respostasCerta.length;i++){
+					if (respostasCerta[i] == respostas[i]){
+						contador++;
+					}
+				}
+				if (contador >= 6){
+					localStorage.setItem("percentual", contador/10*100)
+					return true
+				} else {
+					return false
+				}
+			}
+			else  {
+				return false;
+			}
+		}
+		
+		function getRespostas(){
+			var tamanhoLocal = localStorage.length;
+			var curso = localStorage.getItem("curso");
+			var respostasEmOrdem = [];
+			var div = document.getElementById("respostas");
+			for (i=1; i < (tamanhoLocal+1);i++){
+				
+				//div.innerText += localStorage.getItem("rotulo0"+i) + "\n"
+				respostasEmOrdem.push(localStorage.getItem("rotulo"+i));
+				if(i == (tamanhoLocal-1)){
+					break;
+				}
+			}
+
+			if (curso == null){
+				div.innerText += "Não foi possível localizar o curso que está fazendo. Qualquer dúvida entre em contato conosco."
+			}
+			else if (10 < respostasEmOrdem.length){
+				div.innerText += "Você não respondeu todas as questões"
+			} else {
+				if(verificaRespostas(respostasEmOrdem, curso)){
+					var percentual = localStorage.getItem("percentual")
+					div.innerText += "Parabéns você teve o aproveitamento necessário!!!"
+					div.innerText += "Seu percentual de acerto foi de "+percentual+"% !!! Digite abaixo seu nome para o seu certificado."
+					document.getElementById("certificadoBtn").removeAttribute("disabled")
+					document.getElementById("info").style.display = "block";
+				} else {
+					div.innerText += "Infelizmente você não teve o aproveitamento necessário verifique o conteúdo e refaça o teste."
+				}
+			}
+		}
+
+		function nomeFormulario(){
+			nomeC = document.getElementById('inputValor').value;
+			localStorage.setItem("nomeCliente", ""+nomeC)
+			
+			if(localStorage.getItem("nomeCliente") != ""){
+				window.open("ver-certificado.html", "_blank")
+			} else {
+				alert("Digite o seu nome para o Certificado!!!")
+			}
+			
+		}
+	</script>
+	<style>
+	#info {
+		display: none;
+	}
+	</style>
+</head>
+
+<body>
+	<header class="header" id="header">
+		<div class="linha">
+			<div class="col-12 container">
+				<nav class="container-head">
+					<div class="col-3 logo">
+						<a href="index.html"><img style="width: 150px" src="imgs/logo.jpg"></a>
+					</div>
+					<div class="col-9 nav-item col-dp-12">
+						<a href="index.html">CURSOS</a>
+						<a href="opinioes.html">OPINIÕES</a>
+						<a href="quem-somos.html">QUEM-SOMOS</a>
+						<a href="mapa-do-site.html">MAPA</a>
+						<a href="fale-conosco.html">CONTATO</a>
+					</div>
+				</nav>
+			</div>
+		</div>		
+	</header>
+
+	<section>
+		<div class="linha">
+
+			<article id="sobre">
+				<div class="linha primary">
+					<div class="col-12 container">
+						<div class="container-in">
+							<img class="icone" src="imgs/result.png"><br>
+							<h1>Resultados da Avaliação e Certificado</h1>
+							<p>Obrigado por responder as questões, logo abaixo está seu resultado.</p>
+						</div>
+					</div>			
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha conteudo">
+			<article>
+				<div class="col-12 bloco teste caixa">									
+					<h1>Tela de Resultado</h1>
+					<br><br>
+					<div id="respostas">
+					</div>
+					<div id="info">
+							<label>Nome <input type="text" id="inputValor" /></label>
+					</div>
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha">
+
+			<article id="teste">
+				<div class="linha white">
+					<div class="col-12 container">
+						<div class="linha">
+							<button class="btn green" id="resultadoBtn" onclick="getRespostas()">Verificar Resultado</button>
+							<button class="btn" id="certificadoBtn" onclick="nomeFormulario()" disabled>Gerar Certificado</button>
+						</div>
+					</div>					
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+</body>
+
+<footer>
+	<div class="linha rodape">
+		<div class="linha">
+			<div class="col-12 container">
+				<p>TODOS OS DIREITOS RESERVADOS</p>
+			</div>			
+		</div>
+		<div class="linha topo">
+			<div class="col-12"><a href="#header"><p>Voltar ao topo</p></a></div>
+		</div>		
+	</div>
+</div>
+</footer>

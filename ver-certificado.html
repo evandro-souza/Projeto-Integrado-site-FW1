@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>WebCrew Cursos - Certificado</title>
+	<style type="text/css">
+		body {
+			background-image: url("imgs/certificado.png");
+			background-repeat: no-repeat;
+		}
+
+		#nome {
+			position: absolute;
+			left: 150px;
+			top: 380px;
+			font-size: 40px;
+			width: 920px;
+			text-align: center;
+		}
+
+		#curso {
+			position: absolute;
+			left: 150px;
+			top:500px;
+			font-size: 25px;
+			width: 920px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+		<p id="nome"></p>
+		<p id="curso"></p>
+</body>
+
+</html>
+<script>
+	window.onload = function () {
+		var nomeCliente = localStorage.getItem("nomeCliente")
+		var curso = localStorage.getItem("curso")
+		var localNome = document.getElementById("nome");
+		var localCurso = document.getElementById("curso");
+
+		localNome.innerText += "" + nomeCliente + "\n";
+
+		if (curso == "logica") {
+			localCurso.innerText += "CONCLUIU COM SUCESSO \n"
+			localCurso.innerText += "O CURSO POR WEBCREW DE LÓGICA DE PROGRAMAÇÃO "
+
+		} else if (curso == "fundamentos") {
+			localCurso.innerText += "CONCLUIU COM SUCESSO \n"
+			localCurso.innerText += "O CURSO POR WEBCREW DE FUNDAMENTOS DE WEBDESIGN "
+
+		} else if (curso == "arquitetura") {
+			localCurso.innerText += "CONCLUIU COM SUCESSO \n"
+			localCurso.innerText += "O CURSO POR WEBCREW DE ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES "
+
+		} else if (curso == "sistemas") {
+			localCurso.innerText += "CONCLUIU COM SUCESSO \n"
+			localCurso.innerText += "O CURSO POR WEBCREW DE SISTEMAS OPERACIONAIS "
+
+		} else if (curso == "metodologia") {
+			localCurso.innerText += "CONCLUIU COM SUCESSO \n"
+			localCurso.innerText += "O CURSO POR WEBCREW DE METODOLOGIA CIENTÍFICA "
+
+		} else if (curso == "ingles") {
+			localCurso.innerText += "CONCLUIU COM SUCESSO \n"
+			localCurso.innerText += "O CURSO POR WEBCREW DE INGLÊS INSTRUMENTAL "
+
+		} 
+
+	}
+</script>

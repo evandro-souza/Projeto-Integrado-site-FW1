@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebCrew Cursos</title>
+	<link rel="stylesheet" type="text/css" href="megatrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		
+		function getRespostas(){
+			localStorage.clear();
+			contador = document.getElementsByClassName("questions");
+			contador02 = 0;
+			for(j=1; j < (contador.length+1);j++){
+				resposta1 = document.getElementsByName("qst"+j);
+				for (i=0; i<resposta1.length;i++){
+					if (resposta1[i].checked == true){
+						//alert("Resposta "+(i+1))
+						localStorage.setItem("rotulo"+j,(i+1));
+						contador02++;
+						break
+					}
+				}
+			}
+			localStorage.setItem("curso","ingles");
+			if(contador02 == 10){
+				window.open("conclusao.html","_self")
+			} else {
+				alert('Responda todas as questões');
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header class="header" id="header">
+		<div class="linha">
+			<div class="col-12 container">
+				<nav class="container-head">
+					<div class="col-3 logo">
+						<a href="index.html"><img style="width: 150px" src="imgs/logo.jpg"></a>
+					</div>
+					<div class="col-9 nav-item col-dp-12">
+						<a href="index.html">CURSOS</a>
+						<a href="opinioes.html">OPINIÕES</a>
+						<a href="quem-somos.html">QUEM-SOMOS</a>
+						<a href="mapa-do-site.html">MAPA</a>
+						<a href="fale-conosco.html">CONTATO</a>
+					</div>
+				</nav>
+			</div>
+		</div>		
+	</header>
+
+	<section>
+		<div class="linha">
+
+			<article id="sobre">
+				<div class="linha primary color-so">
+					<div class="col-12 container">
+						<div class="container-in">
+							<img class="icone" src="imgs/so.png"><br>
+							<h1>Avaliação - Sistemas Operacionais</h1>
+							<p>Muito bem! Agora que você já aprendeu sobre vamos realizar o teste, você precisa de responder corretamente 60% das questões para receber o certificado de conclusão.</p>
+							<p>Boa sorte!</p>
+						</div>
+					</div>			
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha conteudo">
+			<article>
+				<div class="col-12 col-dm-12 bloco teste caixa">									
+					<h1>Avaliação Vídeo Aula 01 - Marque as alternativas corretas:</h1>
+					<form>
+						<ul class="questions">
+							<p>Questão 1: Quem é o criador do Linux e quando o mesmo foi criado?</p>
+							<li><label><input type="radio" name="qst1">  Steve Jobs em 1976 </label></li>
+							<li><label><input type="radio" name="qst1">  Stuart em 1990</label></li>
+							<li><label><input type="radio" name="qst1">  Torvalds em 1991</label></li>
+							<li><label><input type="radio" name="qst1">  Trovalcs em 1991a</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 2: O que é um sistema operacional?</p>
+							<li><label><input type="radio" name="qst2"> É a interface entre o usuário e a máquina, gerenciando o hardware</label></li>
+							<li><label><input type="radio" name="qst2"> Sistema que sua principal função é gerenciar os periféricos de entrada e saida </label></li>
+							<li><label><input type="radio" name="qst2"> Sistema que coordena todas as informações contidas no computador</label></li>
+							<li><label><input type="radio" name="qst2">Sistema que gerencia os programas</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 3: Quais desses exemplos abaixo são distribuições Linux?</p>
+							
+							<li><label><input type="radio" name="qst3"> Windows XP</label></li>
+							<li><label><input type="radio" name="qst3"> Ubuntu </label></li>
+							<li><label><input type="radio" name="qst3">Mac</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 4:O que é Kernel?</p>
+							<li><label><input type="radio" name="qst4"> Kernel é um sistema de segurança do Linux</label></li>
+							<li><label><input type="radio" name="qst4"> Kernel é um programa para formatação de discos</label></li>
+							<li><label><input type="radio" name="qst4"> Kernel é o núcleo do sistema operacional</label></li>
+							<li><label><input type="radio" name="qst4"> Kernel é um software gerenciador de banco de dados</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 5:O que é Hardware e Software?</p>
+							<li><label><input type="radio" name="qst5"> Hardware são os periféricos e o Software é os comandos do sistema operacional</label></li>
+							<li><label><input type="radio" name="qst5"> Hardware é a parte física do computador e o software é a parte lógica </label></li>
+							<li><label><input type="radio" name="qst5"> Hardware é a parte lógica do computador e o software é a parte física </label></li>	
+							<li><label><input type="radio" name="qst5"> Hardware é a definição de software, os dois são a mesma coisa </label></li>					
+						</ul>
+					</form>
+				</div>
+			</article>
+
+			<article>
+				<div class="col-12 col-dm-12 bloco teste caixa">									
+					<h1>Avaliação Vídeo Aula 02 - Marque as alternativas corretas:</h1>
+					<form>
+						<ul class="questions">
+							<p>Questão 1:Os comandos utilizados para criar, acessar e remover um diretório vazio são, respectivamente,</p>
+							<li><label><input type="radio" name="qst6">  pwd,mverm </label></li>
+							<li><label><input type="radio" name="qst6"> md,lserm</label></li>
+							<li><label><input type="radio" name="qst6"> mkdir, cd e rmdir</label></li>
+							<li><label><input type="radio" name="qst6"> cdir, lsdir e erase</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 2: Quais destas são extensões de programas do Ubuntu? <font> servem para:.</p>
+							<li><label><input type="radio" name="qst7"> .RAR</label></li>
+							<li><label><input type="radio" name="qst7"> .EXE</label></li>
+							<li><label><input type="radio" name="qst7"> .DEB</label></li>
+							<li><label><input type="radio" name="qst7"> .VAR</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 3:Quem é o criador do primeiro microcomputador? </p>
+							<li><label><input type="radio" name="qst8"> Apple</label></li>
+							<li><label><input type="radio" name="qst8"> IBM</label></li>
+							<li><label><input type="radio" name="qst8"> Microsoft</label></li>
+							<li><label><input type="radio" name="qst8"> HP</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 4:Qual é o nome do primeiro computador?</p>
+							<li><label><input type="radio" name="qst9"> Colossus ou Eniac</label></li>
+							<li><label><input type="radio" name="qst9"> Altair ou Colossus</label></li>
+							<li><label><input type="radio" name="qst9"> Altair ou Eniac</label></li>
+							<li><label><input type="radio" name="qst9"> Eniac ou Silquetcs</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 5:Quais dos exemplos abaixo são considerados hardwares?</p>
+							<li><label><input type="radio" name="qst10">  Placa mãe</label></li>
+							<li><label><input type="radio" name="qst10">   Servidor </label></li>
+							<li><label><input type="radio" name="qst10"> Fonte de alimentação </label></li>
+							<li><label><input type="radio" name="qst10"> Caixadesom</label></li>							
+						</ul>
+					</form>
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha">
+
+			<article id="teste">
+				<div class="linha white">
+					<div class="col-12 container">
+						<div class="linha">
+							<button class="btn green" onclick="getRespostas()">Conferir</button>
+							<button class="btn" onclick="window.location.href='so-aula.html'">Assistir Video Aulas</button>
+						</div>
+					</div>					
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+</body>
+
+<footer>
+	<div class="linha rodape color-so">
+		<div class="linha">
+			<div class="col-12 container">
+				<p>TODOS OS DIREITOS RESERVADOS</p>
+			</div>			
+		</div>
+		<div class="linha topo">
+			<div class="col-12"><a href="#header"><p>Voltar ao topo</p></a></div>
+		</div>		
+	</div>
+</div>
+</footer>

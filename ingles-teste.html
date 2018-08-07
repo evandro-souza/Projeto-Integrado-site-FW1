@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>WebCrew Cursos</title>
+	<link rel="stylesheet" type="text/css" href="megatrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+
+		function getRespostas() {
+			localStorage.clear();
+			contador = document.getElementsByClassName("questions");
+			contador02 = 0;
+			for (j = 1; j < (contador.length + 1); j++) {
+				resposta1 = document.getElementsByName("qst" + j);
+				for (i = 0; i < resposta1.length; i++) {
+					if (resposta1[i].checked == true) {
+						//alert("Resposta "+(i+1))
+						localStorage.setItem("rotulo" + j, (i + 1));
+						contador02++;
+						break
+					}
+				}
+			}
+			localStorage.setItem("curso", "ingles");
+			if (contador02 == 10) {
+				window.open("conclusao.html", "_self")
+			} else {
+				alert('Responda todas as questões');
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header class="header" id="header">
+		<div class="linha">
+			<div class="col-12 container">
+				<nav class="container-head">
+					<div class="col-3 logo">
+						<a href="index.html">
+							<img style="width: 150px" src="imgs/logo.jpg">
+						</a>
+					</div>
+					<div class="col-9 nav-item col-dp-12">
+						<a href="index.html">CURSOS</a>
+						<a href="opinioes.html">OPINIÕES</a>
+						<a href="quem-somos.html">QUEM-SOMOS</a>
+						<a href="mapa-do-site.html">MAPA</a>
+						<a href="fale-conosco.html">CONTATO</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div class="linha">
+
+			<article id="sobre">
+				<div class="linha primary">
+					<div class="col-12 container">
+						<div class="container-in">
+							<img class="icone" src="imgs/ingles.png">
+							<br>
+							<h1>Avaliação - Inglês Instrumental</h1>
+							<p>Muito bem! Agora que você já aprendeu sobre vamos realizar o teste, você precisa de responder corretamente 60% das
+								questões para receber o certificado de conclusão.</p>
+							<p>Boa sorte!</p>
+						</div>
+					</div>
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha conteudo">
+			<article>
+				<div class="col-12 col-dm-12 bloco teste caixa">
+					<h1>Avaliação Vídeo Aula 01 - Marque as alternativas corretas:</h1>
+					<form>
+						<ul class="questions">
+							<p>Questão 1: Qual sentença abaixo foi modificada corretamente para negativa no presente simples para a frase “I am very
+								happy”.</p>
+							<br>
+							<li>
+								<label>
+									<input type="radio" name="qst1"> I am don’t very happy. </label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst1"> I am not very happy.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst1"> I not am very happy.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst1"> I not very happy.</label>
+							</li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 2: Qual sentença abaixo foi modificada corretamente para interrogativa no presente simples para a frase “I
+								am very happy”.</p>
+							<li>
+								<label>
+									<input type="radio" name="qst2"> Am I not very happy?</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst2"> Am I very happy?</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst2"> I am very happy?</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst2"> I am not very happy?</label>
+							</li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 3: Qual sentença abaixo foi modificada corretamente para negativa no presente simples para a frase "She is
+								a very good student."</p>
+							<li>
+								<label>
+									<input type="radio" name="qst3"> Is she not a very good student.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst3"> She is not a very good student.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst3"> She not is a very good student.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst3"> She is not a very not good student. </label>
+							</li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 4: Qual sentença abaixo foi modificada corretamente para interrogativa no presente simples para a frase “Andrew
+								and Tania are brothers.”.</p>
+							<li>
+								<label>
+									<input type="radio" name="qst4"> They are Andrew and Tania brothers? </label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst4"> They Andrew and Tania brothers? </label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst4"> Are Andrew and Tania brothers? </label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst4"> Not Are Andrew and Tania brothers? </label>
+							</li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 5: Qual sentença abaixo foi modificada corretamente para afirmativa no presente simples para a frase “ He
+								is not studying English literature”</p>
+							<li>
+								<label>
+									<input type="radio" name="qst5"> Is he studying English literature. </label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst5"> Is he not studying Englis09h literature.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst5"> He is studying English literature.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst5"> Not studying English literature. </label>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</article>
+
+			<article>
+				<div class="col-12 col-dm-12 bloco teste caixa">
+					<h1>Avaliação Vídeo Aula 02 - Marque as alternativas corretas:</h1>
+					<form>
+						<ul class="questions">
+							<p>Questão 1: Qual a finalidade de utilizar a técnica de Skimming?</p>
+							<li>
+								<label>
+									<input type="radio" name="qst6"> Identificar rapidamente a ideia principal ou o sentido do texto. </label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst6"> Saber ler em inglês.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst6"> Entender por completo qualquer texto em inglês.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst6"> Apenas ler o mais rápido possível textos em inglês sem entender o que está escrito.</label>
+							</li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 2: Qual a finalidade de utilizar a técnica de Scanning?</p>
+							<li>
+								<label>
+									<input type="radio" name="qst7"> Uma leitura rápida, para identificar apenas pontos importantes. </label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst7"> Leitura detalhada podendo entender dados que o texto contém, podendo até mesmo inferir idéias.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst7"> Para saber ler bem inglês.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst7"> Uma leitura que só busca os dados sem importar o sentido do texto.</label>
+							</li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 3: Sobre o Skimming é correto dizer que:</p>
+							<li>
+								<label>
+									<input type="radio" name="qst8"> Devemos ignorar os textos sublinhados e ir direto ao final.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst8"> As imagens no texto não devem ser utilizadas nessa técnica.</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst8"> Devemos nos atentar aos textos em negrito, sublinhado e ao título. </label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst8"> Deve-se ler apenas os últimos parágrafos. </label>
+							</li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 4: Sobre o Scanning é correto dizer que:</p>
+							<li>
+								<label>
+									<input type="radio" name="qst9"> Deve-se ler o mais rápido possível sem olhar os detalhes. </label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst9"> É necessário habilidades de leitura mais avançadas para utiliza-lo </label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst9"> Não é necessário um vocabulário avançado para utiliza-lo</label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst9"> Devemos ignorar os textos sublinhados e ir direto ao final. </label>
+							</li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 5: Supondo que esteja fazendo uma avaliação e o período de tempo é curto, qual técnica deverá utilizar?</p>
+							<li>
+								<label>
+									<input type="radio" name="qst10"> Skimming </label>
+							</li>
+							<li>
+								<label>
+									<input type="radio" name="qst10"> Scanning </label>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha">
+
+			<article id="teste">
+				<div class="linha white">
+					<div class="col-12 container">
+						<div class="linha">
+							<button class="btn green" onclick="getRespostas()">Conferir</button>
+							<button class="btn" onclick="window.location.href='ingles-aula.html'">Assistir Video Aulas</button>
+						</div>
+					</div>
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+</body>
+
+<footer>
+	<div class="linha rodape">
+		<div class="linha">
+			<div class="col-12 container">
+				<p>TODOS OS DIREITOS RESERVADOS</p>
+			</div>
+		</div>
+		<div class="linha topo">
+			<div class="col-12">
+				<a href="#header">
+					<p>Voltar ao topo</p>
+				</a>
+			</div>
+		</div>
+	</div>
+	</div>
+</footer>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebCrew Cursos</title>
+	<link rel="stylesheet" type="text/css" href="megatrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		
+		function getRespostas(){
+			localStorage.clear();
+			contador = document.getElementsByClassName("questions");
+			contador02 = 0;
+			for(j=1; j < (contador.length+1);j++){
+				resposta1 = document.getElementsByName("qst"+j);
+				for (i=0; i<resposta1.length;i++){
+					if (resposta1[i].checked == true){
+						//alert("Resposta "+(i+1))
+						localStorage.setItem("rotulo"+j,(i+1));
+						contador02++;
+						break
+					}
+				}
+			}
+			localStorage.setItem("curso","fundamentos");
+			if(contador02 == 10){
+				window.open("conclusao.html","_self")
+			} else {
+				alert('Responda todas as questões');
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header class="header" id="header">
+		<div class="linha">
+			<div class="col-12 container">
+				<nav class="container-head">
+					<div class="col-3 logo">
+						<a href="index.html"><img style="width: 150px" src="imgs/logo.jpg"></a>
+					</div>
+					<div class="col-9 nav-item col-dp-12">
+						<a href="index.html">CURSOS</a>
+						<a href="opinioes.html">OPINIÕES</a>
+						<a href="quem-somos.html">QUEM-SOMOS</a>
+						<a href="mapa-do-site.html">MAPA</a>
+						<a href="fale-conosco.html">CONTATO</a>
+					</div>
+				</nav>
+			</div>
+		</div>		
+	</header>
+
+	<section>
+		<div class="linha">
+
+			<article id="sobre">
+				<div class="linha primary orange">
+					<div class="col-12 container">
+						<div class="container-in">
+							<img class="icone" src="imgs/fw1.png"><br>
+							<h1>Avaliação - Fundamentos de Web Design</h1>
+							<p>Muito bem! Agora que você já aprendeu sobre vamos realizar o teste, você precisa de responder corretamente 60% das questões para receber o certificado de conclusão.</p>
+							<p>Boa sorte!</p>
+						</div>
+					</div>			
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha conteudo">
+			<article>
+				<div class="col-12 col-dm-12 bloco teste caixa">									
+					<h1>Avaliação Vídeo Aula 01 - Marque as alternativas corretas:</h1>
+					<form>
+						<ul class="questions">
+							<p>Questão 1: O que faz a Tag title</p>
+							<li><label><input type="radio" name="qst1"> Defina um título para o seu documento HTML </label></li>
+							<li><label><input type="radio" name="qst1"> Adiciona parágrafo sua lista</label></li>
+							<li><label><input type="radio" name="qst1"> Cria somente listas</label></li>
+							<li><label><input type="radio" name="qst1"> Adiciona um item a sua lista</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 2: Quais comandos pertencem a estrutura básica de um documento HTML?</p>
+							<li><label><input type="radio" name="qst2"> html, body, tr e head</label></li>
+							<li><label><input type="radio" name="qst2"> html, head, title e table </label></li>
+							<li><label><input type="radio" name="qst2"> html, title, head e body </label></li>
+							<li><label><input type="radio" name="qst2">html,head.title e body </label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 3: Para adicionar uma imagem é preciso sempre utilizar:</p>
+							
+							<li><label><input type="radio" name="qst3"> .jpg</label></li>
+							<li><label><input type="radio" name="qst3"> img src</label></li>
+							<li><label><input type="radio" name="qst3"> A extensão da imagem</label></li>
+							<li><label><input type="radio" name="qst3"> height="430"</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 4:Qual a extensão que eu posso utilizar para salvar minha pagina em html?</p>
+							<li><label><input type="radio" name="qst4"> .html</label></li>
+							<li><label><input type="radio" name="qst4"> .http</label></li>
+							<li><label><input type="radio" name="qst4"> .hmt</label></li>
+							<li><label><input type="radio" name="qst4"> .https</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 5:Quais tags a seguir são utilizadas para se criar uma tabela?</p>
+							<li><label><input type="radio" name="qst5"> tabela td tr table</label></li>
+							<li><label><input type="radio" name="qst5"> h1 table tb tr table </label></li>
+							<li><label><input type="radio" name="qst5"> tabe td tr table </label></li>	
+							<li><label><input type="radio" name="qst5"> table tr td table </label></li>					
+						</ul>
+					</form>
+				</div>
+			</article>
+
+			<article>
+				<div class="col-12 col-dm-12 bloco teste caixa">									
+					<h1>Avaliação Vídeo Aula 02 - Marque as alternativas corretas:</h1>
+					<form>
+						<ul class="questions">
+							<p>Questão 1: Os comandos b, i e u significam sucessivamente:</p>
+							<li><label><input type="radio" name="qst6">  Negrito, Italico e sublinhado Italico </label></li>
+							<li><label><input type="radio" name="qst6"> Sublinhado Sublinhado e Negrito</label></li>
+							<li><label><input type="radio" name="qst6"> sublinhado e Italico e Negrito, Italico</label></li>
+							<li><label><input type="radio" name="qst6"> Negrito e Sublinhado Sublinhado</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 2: Os atributos "face, size e color quando utilizado dentro da tag <font> servem para:.</p>
+								<li><label><input type="radio" name="qst7"> Definir largura, plano de fundo e margem da pagina Definir tipo</label></li>
+								<li><label><input type="radio" name="qst7"> tamanho e cor da fonte Definir alinhamento</label></li>
+								<li><label><input type="radio" name="qst7"> fundo e margem da pagina</label></li>
+								<li><label><input type="radio" name="qst7"> borda e largura da tabela</label></li>
+							</ul>
+							<ul class="questions">
+								<p>Questão 3: O atributo "bgcolor" quando utilizado dentro da tag <body> serve para?</p>
+									<li><label><input type="radio" name="qst8"> Alterar a cor de fundo da tabela</label></li>
+									<li><label><input type="radio" name="qst8"> Alterar a cor de fundo do formulario</label></li>
+									<li><label><input type="radio" name="qst8"> Alterar a cor de fundo da página</label></li>
+									<li><label><input type="radio" name="qst8"> altera a cor da fonte</label></li>
+								</ul>
+								<ul class="questions">
+									<p>Questão 4:Qual tag para criar uma lista numerada?</p>
+									<li><label><input type="radio" name="qst9"> h1</label></li>
+									<li><label><input type="radio" name="qst9"> ul</label></li>
+									<li><label><input type="radio" name="qst9"> li</label></li>
+									<li><label><input type="radio" name="qst9"> lo</label></li>
+								</ul>
+								<ul class="questions">
+									<p>Questão 5: HTML significa:</p>
+									<li><label><input type="radio" name="qst10">  HyperText Markup Language</label></li>
+									<li><label><input type="radio" name="qst10">   HiperTexto de Linguagem Markup </label></li>
+									<li><label><input type="radio" name="qst10"> TextHyper Language Markup </label></li>
+									<li><label><input type="radio" name="qst10"> HiperTexto Markup de Linguagem</label></li>							
+								</ul>
+							</form>
+						</div>
+					</article>
+
+				</div>
+			</section>
+
+			<section>
+				<div class="linha">
+
+					
+					<article id="teste">
+						<div class="linha white">
+							<div class="col-12 container">
+								<div class="linha">
+									<button class="btn green" onclick="getRespostas()">Conferir</button>
+									<button class="btn" onclick="window.location.href='fw1-aula.html'">Assistir Video Aulas</button>
+								</div>
+							</div>					
+						</div>
+					</article>
+
+				</div>
+			</section>
+
+		</body>
+
+		<footer>
+			<div class="linha rodape orange">
+				<div class="linha">
+					<div class="col-12 container">
+						<p>TODOS OS DIREITOS RESERVADOS</p>
+					</div>			
+				</div>
+				<div class="linha topo">
+					<div class="col-12"><a href="#header"><p>Voltar ao topo</p></a></div>
+				</div>		
+			</div>
+		</div>
+	</footer>

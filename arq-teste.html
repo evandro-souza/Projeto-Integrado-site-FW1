@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebCrew Cursos</title>
+	<link rel="stylesheet" type="text/css" href="megatrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		
+		function getRespostas(){
+			localStorage.clear();
+			contador = document.getElementsByClassName("questions");
+			contador02 = 0;
+			for(j=1; j < (contador.length+1);j++){
+				resposta1 = document.getElementsByName("qst"+j);
+				for (i=0; i<resposta1.length;i++){
+					if (resposta1[i].checked == true){
+						//alert("Resposta "+(i+1))
+						localStorage.setItem("rotulo"+j,(i+1));
+						contador02++;
+						break
+					}
+				}
+			}
+			localStorage.setItem("curso","arquitetura");
+			if(contador02 == 10){
+				window.open("conclusao.html","_self")
+			} else {
+				alert('Responda todas as questões');
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header class="header" id="header">
+		<div class="linha">
+			<div class="col-12 container">
+				<nav class="container-head">
+					<div class="col-3 logo">
+						<a href="index.html"><img style="width: 150px" src="imgs/logo.jpg"></a>
+					</div>
+					<div class="col-9 nav-item col-dp-12">
+						<a href="index.html">CURSOS</a>
+						<a href="opinioes.html">OPINIÕES</a>
+						<a href="quem-somos.html">QUEM-SOMOS</a>
+						<a href="mapa-do-site.html">MAPA</a>
+						<a href="fale-conosco.html">CONTATO</a>
+					</div>
+				</nav>
+			</div>
+		</div>		
+	</header>
+
+	<section>
+		<div class="linha">
+
+			<article id="sobre">
+				<div class="linha primary color-aqr">
+					<div class="col-12 container">
+						<div class="container-in">
+							<img class="icone" src="imgs/arq.png"><br>
+							<h1>Avaliação - Arquitetura e Organização de Computadores</h1>
+							<p>Muito bem! Agora que você já aprendeu sobre vamos realizar o teste, você precisa de responder corretamente 60% das questões para receber o certificado de conclusão.</p>
+							<p>Boa sorte!</p>
+						</div>
+					</div>			
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha conteudo">
+			<article>
+				<div class="col-12 col-dm-12 bloco teste caixa">									
+					<h1>Questões - Arquitetura - Aula 01</h1>
+					<form>
+						<ul class="questions">
+							<p>1-	Um administrador de sistemas, ao analisar o conteúdo de um arquivo binário, percebeu que o primeiro byte desse arquivo é, em hexadecimal, igual a 9F, que corresponde, em decimal, ao valor:</p>
+							<li><label><input type="radio" name="qst1"> 16</label></li>
+							<li><label><input type="radio" name="qst1"> 99</label></li>
+							<li><label><input type="radio" name="qst1"> 105</label></li>
+							<li><label><input type="radio" name="qst1"> 159</label></li>
+							<li><label><input type="radio" name="qst1"> 234</label></li>
+						</ul>
+						<ul class="questions">
+							<p>2-  Convertendo o número hexadecimal AB1 para decimal, temos o valor:</p>
+							<li><label><input type="radio" name="qst2"> 2048 </label></li>
+							<li><label><input type="radio" name="qst2"> 2737 </label></li>
+							<li><label><input type="radio" name="qst2"> 2738 </label></li>
+							<li><label><input type="radio" name="qst2"> 5261 </label></li>
+							<li><label><input type="radio" name="qst2"> 574 </label></li>
+						</ul>
+						<ul class="questions">
+							<p>3-  Um computador utiliza representação de inteiros em complemento a dois (C2) com valores armazenados em 8 bits. Indique qual é a representação em C2 do valor decimal -123.</p>
+							<li><label><input type="radio" name="qst3">  10000101</label></li>
+							<li><label><input type="radio" name="qst3">  10000100 </label></li>
+							<li><label><input type="radio" name="qst3"> 01111011 </label></li>
+							<li><label><input type="radio" name="qst3"> 11111011 </label></li>
+							<li><label><input type="radio" name="qst3"> 10000111 </label></li>
+						</ul><ul class="questions">
+							<p>4- Em hexadecimal, qual o resultado da soma dos valores 1E + 3C?</p>
+							<li><label><input type="radio" name="qst4"> 63</label></li>
+							<li><label><input type="radio" name="qst4"> 55</label></li>
+							<li><label><input type="radio" name="qst4"> 5A</label></li>
+							<li><label><input type="radio" name="qst4"> 4F</label></li>
+							<li><label><input type="radio" name="qst4"> 4B</label></li>
+						</ul><ul class="questions">
+							<p>5- O resultado de 15AF subtraído de 17FA, em hexa, é:</p>
+							<li><label><input type="radio" name="qst5"> 25</label></li>
+							<li><label><input type="radio" name="qst5"> 200</label></li>
+							<li><label><input type="radio" name="qst5"> 24B</label></li>
+							<li><label><input type="radio" name="qst5"> 24C</label></li>
+							<li><label><input type="radio" name="qst5"> DB5</label></li>
+						</ul>
+					</form>
+				</div>
+			</article>
+
+			<article>
+				<div class="col-12 col-dm-12 bloco teste caixa">									
+					<h1>Questões - Portas Logicas - Aula 02</h1>
+					<form>
+						<ul class="questions">
+							<p>Qual dos sinais pode ser usado para representar a porta AND?</p>
+							<li><label><input type="radio" name="qst6"> "+"</label></li>
+							<li><label><input type="radio" name="qst6"> "-"</label></li>
+							<li><label><input type="radio" name="qst6"> "."</label></li>
+							<li><label><input type="radio" name="qst6"> "/"</label></li>
+						</ul>
+						<ul class="questions">
+							<p>2- Quais as entradas permitidas na álgebra Booleana?</p>
+							<li><label><input type="radio" name="qst7"> 2, 4, 6.</label></li>
+							<li><label><input type="radio" name="qst7"> 5, 7.</label></li>
+							<li><label><input type="radio" name="qst7"> 0, 1.</label></li>
+							<li><label><input type="radio" name="qst7"> Todas alternativas.</label></li>
+						</ul>
+						<ul class="questions">
+							<p>3- Qual dos blocos a seguir representa uma negação?</p>
+							<li><label><input type="radio" name="qst8"> E</label></li>
+							<li><label><input type="radio" name="qst8"> OU</label></li>
+							<li><label><input type="radio" name="qst8"> XOR</label></li>
+							<li><label><input type="radio" name="qst8"> NOT</label></li>
+						</ul>
+						<ul class="questions">
+							<p>4- Sobre o bloco AND o resultado só e positivo quando: </p>
+							<li><label><input type="radio" name="qst9">As entradas são 0 e 0. </label></li>
+							<li><label><input type="radio" name="qst9">As entradas são 1 e 0.</label></li>
+							<li><label><input type="radio" name="qst9"> Quando não a entrada.</label></li>
+							<li><label><input type="radio" name="qst9"> As entradas são 1 e 1.</label></li>
+						</ul>
+						<ul class="questions">
+							<p>5- Qual bloco possui a representação com o sinal “+”?</p>
+							<li><label><input type="radio" name="qst10"> NAND</label></li>
+							<li><label><input type="radio" name="qst10"> NOT</label></li>
+							<li><label><input type="radio" name="qst10"> OR</label></li>
+							<li><label><input type="radio" name="qst10"> XOR</label></li>
+						</ul>
+					</form>
+				</div>
+			</article>
+		</section>
+
+		<section>
+			<div class="linha">
+	
+				<article id="teste">
+					<div class="linha white">
+						<div class="col-12 container">
+							<div class="linha">
+								<button class="btn green" onclick="getRespostas()">Conferir</button>
+								<button class="btn" onclick="window.location.href='arq-aula.html'">Assistir Video Aulas</button>
+							</div>
+						</div>					
+					</div>
+				</article>
+	
+			</div>
+		</section>
+
+	</body>
+
+	<footer>
+		<div class="linha rodape color-aqr">
+			<div class="linha">
+				<div class="col-12 container">
+					<p>TODOS OS DIREITOS RESERVADOS</p>
+				</div>			
+			</div>
+			<div class="linha topo">
+				<div class="col-12"><a href="#header"><p>Voltar ao topo</p></a></div>
+			</div>		
+		</div>
+	</div>
+</footer>

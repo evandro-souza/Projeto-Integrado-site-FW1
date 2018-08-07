@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebCrew Cursos</title>
+	<link rel="stylesheet" type="text/css" href="megatrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		.img-lp{
+			width: 500px;
+		}
+		@media screen and (max-width: 1240px){
+			.img-lp{
+			width: 380px;
+			}
+		}
+
+		@media screen and (max-width: 650px){
+			.img-lp{
+			width: 220px;
+			}
+		}
+	</style>
+	<script>
+		
+		function getRespostas(){
+			localStorage.clear();
+			contador = document.getElementsByClassName("questions");
+			contador02 = 0;
+			for(j=1; j < (contador.length+1);j++){
+				resposta1 = document.getElementsByName("qst"+j);
+				for (i=0; i<resposta1.length;i++){
+					if (resposta1[i].checked == true){
+						//alert("Resposta "+(i+1))
+						localStorage.setItem("rotulo"+j,(i+1));
+						contador02++;
+						break
+					}
+				}
+			}
+			localStorage.setItem("curso","logica");
+			if(contador02 == 10){
+				window.open("conclusao.html","_self")
+			} else {
+				alert('Responda todas as questões');
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header class="header" id="header">
+		<div class="linha">
+			<div class="col-12 container">
+				<nav class="container-head">
+					<div class="col-3 logo">
+						<a href="index.html"><img style="width: 150px" src="imgs/logo.jpg"></a>
+					</div>
+					<div class="col-9 nav-item col-dp-12">
+						<a href="index.html">CURSOS</a>
+						<a href="opinioes.html">OPINIÕES</a>
+						<a href="quem-somos.html">QUEM-SOMOS</a>
+						<a href="mapa-do-site.html">MAPA</a>
+						<a href="fale-conosco.html">CONTATO</a>
+					</div>
+				</nav>
+			</div>
+		</div>		
+	</header>
+
+	<section>
+		<div class="linha">
+
+			<article id="sobre">
+				<div class="linha primary">
+					<div class="col-12 container">
+						<div class="container-in">
+							<img class="icone" src="imgs/code2.png"><br>
+							<h1>Avaliação - Lógica de Programação</h1>
+							<p>Muito bem! Agora que você já aprendeu sobre vamos realizar o teste, você precisa de responder corretamente 60% das questões para receber o certificado de conclusão.</p>
+							<p>Boa sorte! Clique nas imagens caso queira fazer download.</p>
+						</div>
+					</div>			
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha conteudo">
+			<article>
+				<div class="col-12 bloco teste caixa">									
+					<h1>Avaliação Vídeo Aula 01 - Marque as alternativas corretas:</h1>
+					<form>
+						<ul class="questions">
+							<p>Questão 1: Analise o código abaixo e marque a opção que corresponde a saída ao final da execução do código.</p>
+							<li><a href="imgs/provas/lp01.png" download="Imagem 01"><img class="img-lp" src="imgs/provas/lp01.png"></a></li><br>
+							<li><label><input type="radio" name="qst1"> 10 </label></li>
+							<li><label><input type="radio" name="qst1"> 09</label></li>
+							<li><label><input type="radio" name="qst1"> 05</label></li>
+							<li><label><input type="radio" name="qst1"> 08</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 2: Ainda sobre o código acima, ao final da execução do código qual o valor de “int i”?</p>
+							<li><label><input type="radio" name="qst2"> 01</label></li>
+							<li><label><input type="radio" name="qst2"> 04</label></li>
+							<li><label><input type="radio" name="qst2"> 03</label></li>
+							<li><label><input type="radio" name="qst2"> 09</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 3: Análise os dois trechos de códigos abaixo e marque a opção que corresponde a qual código irá executar sem erros.</p>
+							<li><a href="imgs/provas/lp02.png" download="Imagem 02"><img class="img-lp" src="imgs/provas/lp02.png"></a></li><br>
+							<li><label><input type="radio" name="qst3"> Código A</label></li>
+							<li><label><input type="radio" name="qst3"> Código B</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 4: É posssível fazer um loop dentro de outro loop?</p>
+							<li><label><input type="radio" name="qst4"> Sim</label></li>
+							<li><label><input type="radio" name="qst4"> Não</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 5: Entre os parêntesis do “for( ) { }” marque a opção que corresponde a sua função na sintaxe do for.</p>
+							<li><label><input type="radio" name="qst5"> Execução do loop</label></li>
+							<li><label><input type="radio" name="qst5"> Condições e parâmetros </label></li>
+							<li><label><input type="radio" name="qst5"> Variável </label></li>						
+						</ul>
+					</form>
+				</div>
+			</article>
+
+			<article>
+				<div class="col-12 bloco teste caixa">									
+					<h1>Avaliação Vídeo Aula 02 - Marque as alternativas corretas:</h1>
+					<form>
+						<ul class="questions">
+							<p>Questão 1: Analise o código abaixo e marque a opção que corresponde a saída ao final da execução do código.</p>
+							<li><a href="imgs/provas/lp03.png" download="Imagem 03"><img class="img-lp" src="imgs/provas/lp03.png"></a></li><br>
+							<li><label><input type="radio" name="qst6"> 05 </label></li>
+							<li><label><input type="radio" name="qst6"> 01</label></li>
+							<li><label><input type="radio" name="qst6"> 04</label></li>
+							<li><label><input type="radio" name="qst6"> 08</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 2: Ainda sobre o código acima, qual seria a saída se a variável tivesse sido declarada como “int numero = 6”.</p>
+							<li><label><input type="radio" name="qst7"> 05</label></li>
+							<li><label><input type="radio" name="qst7"> 01</label></li>
+							<li><label><input type="radio" name="qst7"> 04</label></li>
+							<li><label><input type="radio" name="qst7"> 08</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 3: Análise os dois trechos de códigos abaixo e marque a opção que corresponde a qual código irá executar sem erros.</p>
+							<li><a href="imgs/provas/lp04.png" download="Imagem 04"><img class="img-lp" src="imgs/provas/lp04.png"></a></li><br>
+							<li><label><input type="radio" name="qst8"> Código A</label></li>
+							<li><label><input type="radio" name="qst8"> Código B</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 4: Para que seja executado o código dentro do “if” todas as condições precisam ser cumpridas?</p>
+							<li><label><input type="radio" name="qst9"> Sim</label></li>
+							<li><label><input type="radio" name="qst9"> Não</label></li>
+						</ul>
+						<ul class="questions">
+							<p>Questão 5: Entre as chaves do “if( ) { }” marque a opção que corresponde a sua função na sintaxe do for.</p>
+							<li><label><input type="radio" name="qst10">  Execução do if </label></li>
+							<li><label><input type="radio" name="qst10">  Condições e parâmetros </label></li>
+							<li><label><input type="radio" name="qst10"> Variável </label></li>						
+						</ul>
+					</form>
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha">
+
+			<article id="teste">
+				<div class="linha white">
+					<div class="col-12 container">
+						<div class="linha">
+							<button class="btn green" onclick="getRespostas()">Conferir</button>
+							<button class="btn" onclick="window.location.href='lp-aula.html'">Assistir Video Aulas</button>
+						</div>
+					</div>					
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+</body>
+
+<footer>
+	<div class="linha rodape">
+		<div class="linha">
+			<div class="col-12 container">
+				<p>TODOS OS DIREITOS RESERVADOS</p>
+			</div>			
+		</div>
+		<div class="linha topo">
+			<div class="col-12"><a href="#header"><p>Voltar ao topo</p></a></div>
+		</div>		
+	</div>
+</div>
+</footer>

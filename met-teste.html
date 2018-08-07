@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebCrew Cursos</title>
+	<link rel="stylesheet" type="text/css" href="megatrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		
+		function getRespostas(){
+			localStorage.clear();
+			contador = document.getElementsByClassName("questions");
+			contador02 = 0;
+			for(j=1; j < (contador.length+1);j++){
+				resposta1 = document.getElementsByName("qst"+j);
+				for (i=0; i<resposta1.length;i++){
+					if (resposta1[i].checked == true){
+						//alert("Resposta "+(i+1))
+						localStorage.setItem("rotulo"+j,(i+1));
+						contador02++;
+						break
+					}
+				}
+			}
+			localStorage.setItem("curso","ingles");
+			if(contador02 == 10){
+				window.open("conclusao.html","_self")
+			} else {
+				alert('Responda todas as questões');
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header class="header" id="header">
+		<div class="linha">
+			<div class="col-12 container">
+				<nav class="container-head">
+					<div class="col-3 logo">
+						<a href="index.html"><img style="width: 150px" src="imgs/logo.jpg"></a>
+					</div>
+					<div class="col-9 nav-item col-dp-12">
+						<a href="index.html">CURSOS</a>
+						<a href="opinioes.html">OPINIÕES</a>
+						<a href="quem-somos.html">QUEM-SOMOS</a>
+						<a href="mapa-do-site.html">MAPA</a>
+						<a href="fale-conosco.html">CONTATO</a>
+					</div>
+				</nav>
+			</div>
+		</div>		
+	</header>
+
+	<section>
+		<div class="linha">
+
+			<article id="sobre">
+				<div class="linha primary">
+					<div class="col-12 container">
+						<div class="container-in">
+							<img class="icone" src="imgs/met.png"><br>
+							<h1>Avaliação - Metodologia Científica</h1>
+							<p>Muito bem! Agora que você já aprendeu sobre vamos realizar o teste, você precisa de responder corretamente 60% das questões para receber o certificado de conclusão.</p>
+							<p>Boa sorte!</p>
+						</div>
+					</div>			
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha conteudo">
+			<article>
+				<div class="col-12 col-dm-12 bloco teste caixa">									
+					<h1>Avaliação Vídeo Aula 01 - Marque as alternativas corretas:</h1>
+					<form>
+				        <ul class="questions">
+				            <p>1- Em qual tipo de pesquisa precisa-se de uma pesquisa eminentemente exploratória?</p>
+				            <li><label><input type="radio" name="qst1"> Apresentação de algo diferente.</label></li>
+							<li><label><input type="radio" name="qst1"> Apresentação de uma prova.</label></li>
+							<li><label><input type="radio" name="qst1"> Apresentação de um produto</label></li>
+							<li><label><input type="radio" name="qst1"> Apresentação de algo presumivelmente melhor.</label></li>
+				        </ul>
+				        <ul class="questions">
+						    <p>2- Qual item sera o "alicerce" da sua pesquisa?</p>
+							<li><label><input type="radio" name="qst2"> A hipótese</label></li>
+							<li><label><input type="radio" name="qst2"> A fundamentação teórica</label></li>
+							<li><label><input type="radio" name="qst2"> O conhecimento do assunto</label></li>
+							<li><label><input type="radio" name="qst2"> Todas as alternativas</label></li>
+        				</ul>
+		    			<ul class="questions">
+				            <p>3- Qual apresentação precisa de uma pesquisa eminentemente exploratória?</p>
+							<li><label><input type="radio" name="qst3"> Apresentação de algo diferente</label></li>
+							<li><label><input type="radio" name="qst3"> Apresentação de uma prova</label></li>
+							<li><label><input type="radio" name="qst3"> Apresentação de um produto</label></li>
+							<li><label><input type="radio" name="qst3"> Nenhuma das alternativas</label></li>
+				        </ul>
+				        <ul class="questions">
+				            <p>4- Na apresentação de algo diferente, seu produto NÃO pode ser?</p>
+							<li><label><input type="radio" name="qst4"> Melhor que os outros</label></li>
+							<li><label><input type="radio" name="qst4"> Igual aos outros</label></li>
+							<li><label><input type="radio" name="qst4"> Diferente dos outros</label></li>
+							<li><label><input type="radio" name="qst4"> Algo melhor</label></li>
+				        </ul>
+				        <ul class="questions">
+						    <p>5- O que pode ser mostrado como exemplo na apresentação de um produto?</p>
+							<li><label><input type="radio" name="qst5"> Um novo software</label></li>
+							<li><label><input type="radio" name="qst5"> Um sabonete novo</label></li>								<li><label><input type="radio" name="qst5"> Um novo protótipo de robô</label></li>
+							<li><label><input type="radio" name="qst5"> Todas as alternativas</label></li>
+				        </ul>
+				    </form>
+				</div>
+			</article>
+
+			<article>
+				<div class="col-12 col-dm-12 bloco teste caixa">						<h1>Avaliação Vídeo Aula 02 - Marque as alternativas corretas:</h1>
+					<form>
+				        <ul class="questions">
+						    <p>1- Qual apresentação precisa de um benchmark?</p>
+							<li><label><input type="radio" name="qst6"> Apresentação de algo presumivelmente melhor.</label></li>
+							<li><label><input type="radio" name="qst6"> Apresentação de um produto.</label></li>
+							<li><label><input type="radio" name="qst6"> Apresentação de uma prova</label></li>
+							<li><label><input type="radio" name="qst6"> Apresentação de algo reconhecidamente melhor.</label></li>
+				        </ul>
+						<ul class="questions">
+								<p>2- Qual das apresentações são mais utilizadas em testes de doutorado?</p>
+								<li><label><input type="radio" name="qst7"> Apresentação de algo reconhecidamente melhor</label></li>
+								<li><label><input type="radio" name="qst7"> Apresentação de uma prova</label></li>
+								<li><label><input type="radio" name="qst7">Apresentação de um produto </label></li>
+								<li><label><input type="radio" name="qst7"> Apresentação de algo presumivelmente melhor</label></li>
+				        </ul>
+						<ul class="questions">
+								<p>3- A apresentação que precisa de provas matemáticas para comprovar sua validade e a?</p>
+								<li><label><input type="radio" name="qst8"> Apresentação de um produto</label></li>
+								<li><label><input type="radio" name="qst8"> Apresentação de algo reconhecidamente melhor </label></li>
+								<li><label><input type="radio" name="qst8"> Apresentação de uma prova</label></li>
+								<li><label><input type="radio" name="qst8"> Todas as alternativas.</label></li>
+				        </ul>
+				        <ul class="questions">
+								<p>4- Qual tipo de apresentação não necessita de uma hipótese?</p>
+								<li><label><input type="radio" name="qst9"> Apresentação de um produto</label></li>
+								<li><label><input type="radio" name="qst9">Apresentação de uma prova</label></li>
+								<li><label><input type="radio" name="qst9"> Apresentação de uma prova</label></li>
+								<li><label><input type="radio" name="qst9"> Nenhuma das alternativas.</label></li>
+				        </ul>
+				        <ul class="questions">
+								<p>5- “Resultados apresentados em função de testes padronizados internacionalmente  aceito” e característica de qual tipo de apresentação?</p>
+								<li><label><input type="radio" name="qst10"> Apresentação de algo diferente</label></li>
+								<li><label><input type="radio" name="qst10"> Apresentação de um produto</label></li>
+								<li><label><input type="radio" name="qst10">Apresentação de uma prova</label></li>
+								<li><label><input type="radio" name="qst10"> Apresentação de algo reconhecidamente melhor</label></li>
+				        </ul>
+				    </form>
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="linha">
+
+			 <article>
+		        <article id="teste">
+				    <div class="linha white">
+					    <div class="col-12 container">
+						    <div class="linha">
+							    <button class="btn green" onclick="getRespostas()">Conferir</button>
+							    <button class="btn" onclick="window.location.href='met-aula.html'">Assistir Video Aulas</button>
+						    </div>
+					    </div>					
+				    </div>
+			    </article>
+            </article>
+
+		</div>
+	</section>
+
+</body>
+
+<footer>
+	<div class="linha rodape">
+		<div class="linha">
+			<div class="col-12 container">
+				<p>TODOS OS DIREITOS RESERVADOS</p>
+			</div>			
+		</div>
+		<div class="linha topo">
+			<div class="col-12"><a href="#header"><p>Voltar ao topo</p></a></div>
+		</div>		
+	</div>
+</div>
+</footer>
